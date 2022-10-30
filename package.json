@@ -1,26 +1,48 @@
 {
-  "name": "expo-starter",
-  "version": "1.0.0",
+  "name": "@accelist/expo-starter",
+  "version": "0.1.0",
+  "description": "React Native Expo project starter template for PT. Accelist Lentera Indonesia",
+  "author": "Ryan Elian",
+  "homepage": "https://github.com/accelist/expo-starter#readme",
+  "bugs": "https://github.com/accelist/expo-starter/issues",
+  "license": "Apache-2.0",
   "main": "node_modules/expo/AppEntry.js",
+  "private": true,
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "typescript": "tsc -w --pretty --preserveWatchOutput",
+    "eslint": "esw -w --ext .js,.jsx,.ts,.tsx",
+    "prepare": "husky install",
+    "pre-commit-check": "tsc && eslint --ext .js,.jsx,.ts,.tsx ./",
+    "dev": "concurrently \"npm:prepare\" \"npm:typescript\" \"npm:eslint\""
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.9.10",
+    "@tanstack/react-query": "^4.13.4",
     "expo": "~46.0.16",
     "expo-status-bar": "~1.4.0",
     "react": "18.0.0",
     "react-dom": "18.0.0",
+    "react-hook-form": "^7.38.0",
     "react-native": "0.69.6",
-    "react-native-web": "~0.18.7"
+    "react-native-paper": "^4.12.5",
+    "react-native-web": "~0.18.7",
+    "zod": "^3.19.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
+    "@react-native-community/eslint-config": "3.1.0",
     "@types/react": "~18.0.14",
     "@types/react-native": "~0.69.1",
+    "@typescript-eslint/eslint-plugin": "5.41.0",
+    "@typescript-eslint/parser": "5.41.0",
+    "concurrently": "^7.5.0",
+    "eslint": "8.26.0",
+    "eslint-watch": "8.0.0",
+    "husky": "^8.0.1",
     "typescript": "~4.3.5"
-  },
-  "private": true
+  }
 }

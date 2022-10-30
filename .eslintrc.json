@@ -1,0 +1,15 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "@react-native-community"
+    ],
+    "rules": {
+        "prettier/prettier": 0,
+        "react/prop-types": 0,
+        "react/react-in-jsx-scope": 0
+    }
+}
