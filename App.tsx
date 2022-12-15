@@ -1,20 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { AuthContextProvider } from './components/AuthContextProvider';
+import { SimpleNavigator } from './components/SimpleNavigator';
 
 export default function App() {
     return (
-        <View style={styles.container}>
-            <Text>Open up App.tsx to start working on your app!</Text>
+        <AuthContextProvider>
             <StatusBar style="auto" />
-        </View>
+            <SimpleNavigator />
+        </AuthContextProvider>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
